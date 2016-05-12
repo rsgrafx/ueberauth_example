@@ -10,6 +10,8 @@
     <h2>Welcome, <%= @current_user.name %>!</h2>
     <img src="<%= @current_user.avatar %>" class="img-circle"/>
     <%= link "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
+    <br/>
+    <%= link "Please grant us your contacts.", to: google_redirect_url %>
     <br>
   <% else %>
     <a class="btn btn-primary btn-lg" href="/auth/github">
