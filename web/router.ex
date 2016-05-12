@@ -22,6 +22,12 @@ defmodule UeberauthExample.Router do
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
     post "/:provider/callback", AuthController, :callback
+
+    get "/:provider/import", AuthController, :import
+    post "/:provider/import", AuthController, :import
+
+    get "/:provider/contact_capture", AuthController, :capture
+
     delete "/logout", AuthController, :delete
   end
 
