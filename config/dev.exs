@@ -12,7 +12,8 @@ config :ueberauth_example, UeberauthExample.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]],
+  secret_key_base: System.get_env("UEBERAUTH_TEST_SECRET") #
 
 # Watch static and templates for browser reloading.
 config :ueberauth_example, UeberauthExample.Endpoint,
@@ -35,8 +36,6 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :ueberauth_example, UeberauthExample.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
   database: "ueberauth_example_dev",
   hostname: "localhost",
   pool_size: 10
