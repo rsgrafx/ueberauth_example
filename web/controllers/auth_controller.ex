@@ -86,7 +86,7 @@ defmodule UeberauthExample.AuthController do
   end
 
   defp endpoint,      do: "https://www.googleapis.com/oauth2/v3/token"
-  defp client_id,     do: System.get_env("ORION_GOOGLE_CLIENT_ID")
-  defp client_secret, do: System.get_env("ORION_GOOGLE_CLIENT_SECRET")
+  defp client_id,     do: System.get_env("GOOGLE_CLIENT_ID")
+  defp client_secret, do: System.get_env("GOOGLE_CLIENT_SECRET")
   defp redirect_url,  do: "#{UeberauthExample.Endpoint.static_url}/auth/google/import"
 end
